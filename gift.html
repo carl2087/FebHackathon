@@ -5,35 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.png">
-    <title>Love Letter Genie</title>
-    <link href="./assets/css/index.css" rel="stylesheet" />
+
+    <title>Love Letter Generator</title>
+    <link href="./assets/css/index.css" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montez&family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montez&family=Poppins:wght@200;300;400;500;600;700;800&display=swap" as="style">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <!-- Logo here -->
         <div class="container-fluid">
-            <a class="navbar-brand"  href="index.html"><img id="navLogo" alt="Love letter genie logo" src="./assets/images/genie-logo-minus-text.png"/></a>
+            <a class="navbar-brand"  href="index.html">
+                <img id="navLogo" alt="Love letter genie logo" src="./assets/images/genie-logo-minus-text.png"/></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active current" aria-current="page" href="index.html"><i class="fas fa-home"></i>Home</a>
+                        <a class="nav-link" aria-current="page" href="index.html"><i class="fas fa-home"></i>Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="gift.html"><i class="fas fa-gift"></i>Gift Shop</a>
+                        <a class="nav-link active current" href="gift.html"><i class="fas fa-gift"></i>Gift Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="team.html"><i class="fas fa-users"></i>Team Members</a>
+                        <a class="nav-link" href="team.html"><i class="fas fa-users"></i>Team Members</a>
                     </li>
                     <button class="theme-toggle-btn" id="toggle-btn">
                         <!-- Theme Swapper  -->
@@ -46,49 +46,42 @@
                     </button>
                 </ul>
             </div>
-            
         </div>
     </nav>
-    <!-- Background image -->
-    <div class="container bg-img">
-        
-        <h1 class="title"><i class="fas fa-heart"></i>Love Letter Genie<i class="fas fa-heart"></i></h1>
+    <div class="container ">
         <div class="row">
-            <form id="loveLetterForm">
-                <div class="col-sm-12 col-md-6">
-                    <label for="toName" class="form-label">To:</label>
-                    <input type="text" id="toName" class="form-control" name="toName" placeholder="Recipient's Name" required>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                    <label for="fromName" class="form-label">From:</label>
-                    <input type="text" class="form-control" id="fromName" name="fromName" placeholder="Your Name" required>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                    <label for="extraWords" class="form-label">Include additional word/s (optional):</label>
-                    <input type="text" class="form-control" id="extraWords" name="extraWords" placeholder="Additional Words">
-                </div>
-                <button type="button" class="btn col-sm-12 col-md-6" id="generateButton"><i class="fas fa-angle-double-right"></i>
-                    Generate Love Letter
-                </button>
-                <!-- Output container for the love letter -->
-                <div id="loveLetterOutput" class="love-letter-box"></div>
-
-                <!-- Notification -->
-                <div id="notification" class="notification hidden">Love letter copied to clipboard!</div>
-                <div id="iconsDiv">
-                    <a id="copyButton" class="btn icon-button" aria-label="copy to clipboard"></a>
-                    <a onclick="shareOnWhatsApp()" class="btn btn-outline-secondary " id="whatsapp-button" aria-label="Share to Whatsapp"></a>
-                    <!-- Refresh Button -->
-                    <a onclick="refreshPage()" class="btn btn-outline-secondary" id="refresh-anchor" aria-label="Refresh Page"></a>
-                </div>
-            </form>
+            <h1>Infuse every moment with love and beauty. Explore the enchanting world of flowers and gifts at our esteemed partners' websites.</h1>
         </div>
-    
-    </div>
+        
+        <div class="row teamProfileRow justify-content-around">
 
-    <!-- Hidden div that contains an image of hearts that will appear if love letter function successfull -->
-    <div class="heartsDiv hidden" id="heart">
-        <img src="./assets/images/hearts.png" alt="hearts that appear for an animation"/>
+            <div class="card" style="width: 18rem;">
+                <a href="https://www.jollyflorist.com/" target="_blank">
+                <img src="./assets/images/roses-resized.jpg" class="card-img-top" alt="roses"></a>
+                <div class="card-body">
+                  <p class="card-text">Let love blossom with our enchanting flower arrangements. For an unforgettable bouquet, explore the stunning collections available at <strong><a href="https://www.jollyflorist.com/" target="_blank">JollyFlorist</a></strong>.</p>
+                </div>
+              </div>
+
+              <div class="card" style="width: 18rem;">
+                <a href="https://www.zazzle.co.uk/" target="_blank">
+                <img src="./assets/images/printed_ring.jpg" class="card-img-top" alt="love engraved ring"></a>
+                <div class="card-body">
+                  <p class="card-text">Embrace the joy of giving with our curated selection of heartfelt gifts. Explore a world of endless possibilities at our gift shop and find the perfect expressions of love at <a href="https://www.zazzle.co.uk/" target="_blank"><strong>Zazzle</strong></a>.</p>
+                </div>
+              </div>
+
+              <div class="card" style="width: 18rem;">
+                <a href="https://reads.ie/" target="_blank">
+                <img src="./assets/images/mug.jpg" class="card-img-top" alt="mug"></a>
+                <div class="card-body">
+                  <p class="card-text">Find the perfect complement to your heartfelt sentiments in our partner's collection of thoughtful gifts. Celebrate life's precious moments with unique treasures from <strong><a href="https://reads.ie/" target="_blank">Reads</a></strong>.</p>
+                </div>
+              </div>
+
+
+        </div>
+
     </div>
 
     <footer class="text-center text-lg-start text-white">
@@ -101,14 +94,14 @@
                     <!--Grid column-->
                     <div class="col-lg-4 col-md-10 mb-10 mb-md-0 footerText">
                         <h5 class="text-uppercase">Love Letter Genie</h5>
-
                         <p>
-                            Welcome to our site Love Letter Genie. This site was created
-                            as part of The Code Institutue Hackathon event February 2024.
+                         Welcome to our site Love Letter Genie. This site was created
+                        as part of The Code Institutue Hackathon event February 2024.
                         </p>
                     </div>
                 </div>
             </section>
+
 
             <!-- Section: Social media -->
             <section class="mb-4 text-center">
@@ -117,22 +110,32 @@
                 <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/moabdelbasset/FebHackathon"
                     role="button" aria-label="external link to github" target="_blank"><i class="fab fa-github"></i></a>
             </section>
-                <!-- Section: Social media -->
-            </div>
+            <!-- Section: Social media -->
+        </div>
 
-            <!-- Copyright -->
-            <div class="text-center p-3 footerText">
-                © Copyright:
-                <a class="footerText" href="https://github.com/moabdelbasset/FebHackathon" target="_blank">Roses are #FF0000, Violets are #0000FF</a>
-            </div>
-            <!-- Copyright -->
-        
+        <!-- Copyright -->
+        <div class="text-center p-3 footerText">
+            © Copyright:
+            <a class="footerText" href="https://github.com/moabdelbasset/FebHackathon" target="_blank">Roses are #FF0000, Violets are #0000FF</a>
+        </div>
+        <!-- Copyright -->
     </footer>
+    <!-- Footer -->
 
-    
+
     <script src="https://kit.fontawesome.com/0f99558fa2.js" crossorigin="anonymous"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+    <script>
+        //  // Dark mode toggle
+        const body = document.querySelector('body');
+        const toggle = document.querySelector('#toggle-btn');
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('dark');
+            body.classList.toggle('dark');
+        });
     </script>
     <script src="./assets/js/script.js"></script>
 </body>

@@ -11,10 +11,17 @@
   --mainly-red: #ffdee3;
   --semi-pink: #ff8896;
   --white-smoke: #f3f3f3;
+  --dark-color: #333;
+  --black-color: black;
+  --accent-color-dark: #d0d066;
+  --accent-color-light: orangered;
+  --black: #000;
 
   /* Utilities */
   --small-box-shadow: 1px -1px 7px 0 var(--brink-pink);
   --border: 1px solid var(--light-pink);
+
+  --transition-delay: 1s;
 }
 
 .current {
@@ -51,9 +58,19 @@ i:hover,
 }
 
 body {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+
+  /* Theme Toggle CSS for body  */
+
+  transition: var(--transition-delay) !important;
+  background-color: var(--white-smoke) !important;
+  color: var(--black-color) !important;
+  .theme-toggle-btn .icon {
+    fill: var(--accent-color-light) !important;
+  }
+
 }
 
 footer {
@@ -63,15 +80,20 @@ footer {
 
 #generateButton {
   margin-top: 15px !important;
+  margin-bottom: 15px !important;
 }
 
 h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 30px !important;
-  font-family:var(--letter-font);
+  font-family: var(--letter-font);
   color: var(--deep-carmine-pink) !important;
+  font-size: large;
 }
 
 body {
@@ -90,7 +112,7 @@ body {
   }
 }
 
-.test {
+.heartsDiv {
   height: 100vh;
   width: 100vh;
   position: fixed;
@@ -109,10 +131,23 @@ body {
 }
 
 #loveLetterOutput {
+  display: none; /* hidden when empty, JS changes it to flex */
   margin: 30px 15px;
   font-family: var(--letter-font);
   font-weight: 600;
+  font-size: 1.6em;
   color: var(--deep-carmine-pink);
+}
+
+#iconsDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
+}
+
+#iconsDiv > button {
+  margin: 0px 50px;
 }
 
 /* Navbar section */
@@ -122,24 +157,27 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary {
   box-shadow: var(--small-box-shadow);
 }
 
+#navLogo {
+  height: 60px;
+  width: 60px;
+  border-radius: 10px;
+}
+
 .navbar-nav .nav-link.show {
   color: var(--mainly-red) !important;
 }
 
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link.show:hover {
-  color: var(--deep-carmine-pink) !important;
+  color: #000 !important;
 }
 
-/* .navbar-expand-lg .navbar-collapse {
-  font-size: larger;
-} */
 
 a.nav-link {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  color: var(--mainly-red) !important;
+  color: #000 !important;
 }
 
 /* Footer section  */
@@ -158,6 +196,9 @@ footer.text-center.text-lg-start.text-white {
   color: var(--semi-pink);
 }
 
+.footerText {
+  color: #000 !important;
+}
 
 /* Generate Letter Button */
 #generateButton {
@@ -204,6 +245,24 @@ footer.text-center.text-lg-start.text-white {
   width: 100%;
 }
 
+/* Refresh anchor */
+#refresh-anchor {
+  background: url('../icons/refresh.png') no-repeat center center; /* Add your refresh icon */
+  background-size: cover; /* Ensure the icon covers the button area */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px; /* Set a fixed width */
+  height: 50px; /* Set a fixed height */
+  margin-left: 10px; /* Space from other buttons */
+  border: none; /* Remove border if not needed */
+  cursor: pointer; /* Change cursor to pointer to indicate this is clickable */
+  display: none; /* Hide initially */
+}
+
+#refresh-anchor:hover {
+  transform: scale(1.1); /* Slightly increase button size on hover */
+}
 
 
 @media (min-width: 768px) {
@@ -214,13 +273,17 @@ footer.text-center.text-lg-start.text-white {
     }
     #loveLetterForm,
     #loveLetterOutput {
-        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
+    #loveLetterForm {
+      display: flex;
+    }
+
     #loveLetterOutput {
+        display: none; /* hidden when empty, JS changes it to flex */
         margin: 0 auto;
         padding: 30px 10px;
     }
@@ -228,17 +291,212 @@ footer.text-center.text-lg-start.text-white {
   .col-md-6 {
     width: 60% !important;
   }
+
+  .gitHubPro > i {
+    font-size: 3.5vw; /* Slightly smaller */
+  }
+
+  .teamName {
+    font-size: 3.5vw;
+  }
+  #teamName {
+    font-size: 3.5vw;
+  }
 }
 
 @media (min-width: 576px) {
-    #generateButton {
-        font-size: 1.5em;
-        letter-spacing: 0.1em !important;
-        margin-top: 20px !important;
-        padding: 10px 30px !important;
-      }
-    .title {
-        font-size: 3rem !important;
-        font-weight: 600 !important;
-    }
+  #generateButton {
+    font-size: 1.5em;
+    letter-spacing: 0.1em !important;
+    margin-top: 20px !important;
+    padding: 10px 30px !important;
+  }
+  .title {
+    font-size: 3rem !important;
+    font-weight: 600 !important;
+  }
+
+  .gitHubPro > i {
+    font-size: 10vw; /* Even smaller */
+  }
+
+}
+
+@media (max-width: 400px) {
+  .gitHubPro > i {
+    font-size: 2em; /* Small size for very small screens */
+  }
+
+}
+
+/* Custom Button Styles */
+.icon-button {
+    background: url('../icons/copy.png') no-repeat center center;
+    background-size: contain;
+    border: none;
+    width: 50px; /* Set the width as needed */
+    height: 50px; /* Set the height as needed */
+    cursor: pointer;
+}
+
+.icon-button:hover {
+  transform: scale(1.1); /* Slightly increase button size on hover */
+}
+
+#whatsapp-button:hover  {
+  transform: scale(1.1); /* Slightly increase button size on hover */
+}
+
+#whatsapp-button {
+  /* Initially hide the WhatsApp icon */
+  display: none; 
+  background: url('../icons/whatsapp.png') no-repeat center center;
+  background-size: contain;
+  border: none;
+  margin: 0 0 0 20px;
+  width: 50px; /* Set the width as needed */
+  height: 50px; /* Set the height as needed */
+  cursor: pointer;
+}
+
+#copyButton {
+  /* Initially hide the copy to clipboard icon */
+  display: none;
+}
+
+/* Styles for the love letter box */
+.love-letter-box {
+    border: 1px solid #ddd; /* Adds a light border */
+    padding: 20px; /* Adds some padding inside the box */
+    margin-top: 20px; /* Adds space between the form and the box */
+    border-radius: 10px; /* Rounds the corners */
+    background-color: #fefefe; /* Light background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    min-height: 100px; /* Minimum height */
+    width: auto; /* Adjust width as needed, or use max-width */
+    word-wrap: break-word; /* Ensures the content wraps nicely */
+    overflow: auto; 
+    max-height: 500px; 
+}
+
+/* Notification styles */
+.notification {
+    display: none; /* Hidden by default */
+    position: fixed; /* Or absolute, depending on your layout */
+    bottom: 20px; /* Place it at the bottom */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Center it horizontally */
+    background-color: #4CAF50; /* Some visible color */
+    color: white; /* Text color */
+    padding: 10px; /* Some padding */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Some shadow for depth */
+    z-index: 1000; /* Make sure it's above other elements */
+}
+
+/* Class to make the notification visible */
+.notification.show {
+    display: block;
+}
+
+/* team member page */
+
+.profileIMG {
+  border-radius: 100%;
+}
+
+.teamProfileRow {
+  margin-bottom: 20px;
+}
+
+#gitHubPro > i {
+  font-size: 3.5em;
+  color: #ff3334;
+  transition: font-size 0.3s ease; 
+}
+
+/* Theme toggler */
+
+.theme-toggle-btn {
+  background-color: var(--accent-color);
+  color: var(--black-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  border-radius: 0.3em;
+  border: none;
+  outline: none;
+  transition: var(--transition-delay);
+  transform: scale(1);
+}
+
+.theme-toggle-btn .icon {
+  margin-right: 0.5em;
+  fill: var(--accent-color-dark);
+}
+
+.theme-toggle-btn .icon .dark {
+  color: var(--accent-color-dark) !important;
+}
+
+/* .theme-toggle-btn:hover {
+    color: var(--deep-carmine-pink);
+  } */
+
+body.dark {
+  background-color: var(--dark-color) !important;
+  color: var(--white-smoke) !important;
+  .theme-toggle-btn .icon {
+    fill: var(--accent-color-dark) !important;
+  }
+}
+
+
+/* Style for h2 with class .teamName */
+.teamName {
+  /* Default font size for larger screens */
+  font-size: 1.6em;
+}
+
+/* Style for h2 with ID #teamName */
+#teamName {
+  /* Default font size for larger screens */
+  font-size: 1.6em;
+}
+
+
+@media (max-width: 1024px) {
+  .teamName,
+  #teamName {
+    /* Slightly smaller font size for smaller screens */
+    font-size: 1.4em;
+  }
+}
+
+@media (max-width: 768px) {
+  .teamName,
+  #teamName {
+    /* Even smaller font size for tablet screens */
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 576px) {
+  .teamName,
+  #teamName {
+    /* Small font size for mobile screens */
+    font-size: 1em;
+  }
+}
+
+
+@media (max-width: 250px) {
+  .teamName,
+  #teamName {
+    /* Small font size for mobile screens */
+    font-size: 0.5em;
+  }
 }
